@@ -184,6 +184,12 @@ Once installed, usbmount requires some tweaking to make it work well on the Rasp
 
 Once usbmount is installed and configured the LPC1768 on-board SD card should be mounted at `/media/usb` the next time it is plugged in or restarted.
 
+If the device does not appear, change
+/lib/systemd/system/systemd-udevd.service
+Change: PrivateMounts=yes
+To: PrivateMounts=no
+From: https://raspberrypi.stackexchange.com/questions/101055/usbmount-runs-correcty-but-mount-does-not-show-up 
+
 #### LPC1768 Configuration
 The only required setting is the path to the firmware update folder.  If using usbmount it will probably be `/media/usb`.
 
